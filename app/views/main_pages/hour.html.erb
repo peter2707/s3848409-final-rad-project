@@ -4,27 +4,29 @@
     <div class="row content">
         <div class="col-sm-12">
             <h1>Clock+</h1>
-            <p>Clock+ | by Monkolsophearith Prum | Pass Level | Tuesday Group</p>
+            <br />
+            <p>Clock+ | by Monkolsophearith Prum | s3848409@student.rmit.edu.au | Credit Level | Tuesday Group</p>
         </div>
 
         <div class="col-sm-3 side-bar">
-            <p><i class="fa fa-circle dot-green" aria-hidden="true"></i> Business time</p>
-            <p><i class="fa fa-circle dot-yellow" aria-hidden="true"></i> Business overtime</p>
-            <p><i class="fa fa-circle dot-red" aria-hidden="true"></i> Personal time</p>
-            <p><i class="fa fa-moon-o" aria-hidden="true"></i> Sleeping time</p>
+            <p><i class="fa fa-circle dot-green"></i> Business time</p>
+            <p><i class="fa fa-circle dot-yellow"></i> Business overtime</p>
+            <p><i class="fa fa-circle dot-red"></i> Personal time</p>
+            <p><i class="fa fa-moon-o"></i> Sleeping time</p>
         </div>
 
         <div class="col-sm-6">
             <div class="timezone-container">
                 <div class="cityname">
                     <%=Time.zone.name%>
+                    <p class="comparetime">Current</p>
                 </div>
                 <div class="citytime">
                     <div class="time"><%=Time.current.strftime("%I:%M %p") %></div>
                     <% if (Time.current.strftime("%H").to_i >= 9) && (Time.current.strftime("%H").to_i <= 17) %>
                         <div class="day">Today <i class="fa fa-circle dot-green"></i></div>
                     <% elsif (Time.current.strftime("%H").to_i >= 18) && (Time.current.strftime("%H").to_i <= 19) %>
-                        <div class="day">Today <i class="fa fa-circle dot-yellow"></i> </div>
+                        <div class="day">Today <i class="fa fa-circle dot-yellow"></i></div>
                     <% elsif (Time.current.strftime("%H").to_i == 8) || ((Time.current.strftime("%H").to_i >= 20) && (Time.current.strftime("%H").to_i <= 22)) %>
                         <div class="day">Today <i class="fa fa-circle dot-red"></i></div>
                     <% elsif (Time.current.strftime("%H").to_i >= 23) || (Time.current.strftime("%H").to_i <= 7) %>
@@ -37,11 +39,14 @@
                 <div class="timezone-container">
                     <div class="cityname">
                         <%=timezone%>
-                        <% @compareTime = Time.current.in_time_zone(timezone).strftime("%H:%M").to_i - Time.current.strftime("%H:%M").to_i %>
+                        <% @timeNow = Time.zone.now.in_time_zone(timezone)%>
+                        <% @timeZone = Time.zone.now %>
+                        <% @timeDiff = @timeNow.utc_offset - @timeZone.utc_offset %>
+                        <% @compareTime = @timeDiff/60/60%>
                         <% if ( @compareTime >= 0 ) %>
-                            <p class="comparetime">+<%= @compareTime %></p>
+                            <p class="comparetime">+<%= @compareTime %> HRS</p>
                         <% else %>
-                            <p class="comparetime"><%= @compareTime %></p>
+                            <p class="comparetime"><%= @compareTime %> HRS</p>
                         <% end %>
                     </div>
                     <div class="citytime">
@@ -51,7 +56,7 @@
                         <% if (Time.current.in_time_zone(timezone).strftime("%H").to_i >= 9) && (Time.current.in_time_zone(timezone).strftime("%H").to_i <= 17) %>
                             <div class="day">Today <i class="fa fa-circle dot-green"></i></div>
                         <% elsif (Time.current.in_time_zone(timezone).strftime("%H").to_i >= 18) && (Time.current.in_time_zone(timezone).strftime("%H").to_i <= 19) %>
-                            <div class="day">Today <i class="fa fa-circle dot-yellow"></div>
+                            <div class="day">Today <i class="fa fa-circle dot-yellow"></i></div>
                         <% elsif (Time.current.in_time_zone(timezone).strftime("%H").to_i == 8) || ((Time.current.in_time_zone(timezone).strftime("%H").to_i >= 20) && (Time.current.in_time_zone(timezone).strftime("%H").to_i <= 22)) %>
                             <div class="day">Today <i class="fa fa-circle dot-red"></i></div>
                         <% elsif (Time.current.in_time_zone(timezone).strftime("%H").to_i >= 23) || (Time.current.in_time_zone(timezone).strftime("%H").to_i <= 7) %>
@@ -81,7 +86,7 @@
             <p></p>
             <div class="form-check">
                 <%= form_tag root_path, :method => 'get' do %>
-                    <%= label_tag "12-hour Clock" %>
+                    <%= label_tag "24-hour Clock" %>
                     <%= check_box :hourtype, :onclick => 'this.form.submit()' %>
                     <%= submit_tag "Go", class:"btn btn-sm btn-secondary"%>
                 <% end %>

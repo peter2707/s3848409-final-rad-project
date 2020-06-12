@@ -1,11 +1,11 @@
 class MainPagesController < ApplicationController
 
   def home
-    @selectedTimeZones = ["Europe/London", "Eastern Time (US & Canada)"]
+    @selectedTimeZones = ["London", "Nairobi", "Auckland", "Madrid", "Bangkok", "Tokyo"]
   end
 
   def hour
-    @selectedTimeZones = ["Europe/London", "Eastern Time (US & Canada)"]
+    @selectedTimeZones = ["London", "Nairobi", "Auckland", "Madrid", "Bangkok", "Tokyo"]
   end
 
   def hourtype
