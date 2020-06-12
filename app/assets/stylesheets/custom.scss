@@ -27,9 +27,16 @@ textarea {
 .col-sm-6{
   background-color: #3A3A3A;
   padding: 10px;
+  margin-top: 20px;
   border-radius: 5px;
-  min-height: 400px;
+  min-height: 350px;
   height: auto;
+}
+.col-sm-3{
+  margin-top: 80px;
+  label {
+    font-size: small;
+  }
 }
 
 /* typography */
@@ -79,7 +86,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.5em;
     margin-bottom: 50px;
   }
-  .btn {
+  .btn-outline-success {
     border-radius: 25px;
     text-align: center;
     height: 40px;
@@ -104,6 +111,12 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1em;
   }
 
+  .btn-group {
+    label {
+      font-size: small;
+    }
+  }
+
   /*     footer      */
 
   footer {
@@ -122,7 +135,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   .fa {
     padding-top: 12px;
-    font-size: 30px;
+    font-size: 40px;
     width: 40px;
     height: 40px;
     text-align: center;
@@ -172,4 +185,41 @@ h1, h2, h3, h4, h5, h6 {
       padding: 0;
       font-size: small;
     }
+  }
+
+  /*        city and time          */
+
+  .timezone-container{
+    padding-top: 20px;
+    padding-left: 10px;
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid gray;
+    .comparetime{
+      text-align: left;
+      padding-left: 10px;
+      color: #d4d4d4;
+      font-size: medium;
+    }
+  }
+  .cityname{
+    float: left;
+    font-size: 1.25em;
+  }
+  .citytime{
+    float: right;
+    font-size: 1.25em;
+    .day{
+      font-size: small;
+    }
+  }
+  .add-timezone{
+    height: 50px;
+    .fa-plus{
+      padding-top: 20px;
+      color: #d4d4d4;
+    }
+  }
+  .add-timezone:hover{
+    opacity: 0.6;
   }

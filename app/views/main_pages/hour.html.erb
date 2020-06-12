@@ -20,7 +20,7 @@
                     <%=Time.zone.name%>
                 </div>
                 <div class="citytime">
-                    <div class="time"><%=Time.current.strftime("%H:%M") %></div>
+                    <div class="time"><%=Time.current.strftime("%I:%M %p") %></div>
                     <% if (Time.current.strftime("%H").to_i >= 9) && (Time.current.strftime("%H").to_i <= 17) %>
                         <div class="day">Today <i class="fa fa-circle dot-green"></i></div>
                     <% elsif (Time.current.strftime("%H").to_i >= 18) && (Time.current.strftime("%H").to_i <= 19) %>
@@ -46,7 +46,7 @@
                     </div>
                     <div class="citytime">
                         <div class="time">
-                            <%=Time.current.in_time_zone(timezone).strftime("%H:%M") %>
+                            <%=Time.current.in_time_zone(timezone).strftime("%I:%M %p") %>
                         </div>
                         <% if (Time.current.in_time_zone(timezone).strftime("%H").to_i >= 9) && (Time.current.in_time_zone(timezone).strftime("%H").to_i <= 17) %>
                             <div class="day">Today <i class="fa fa-circle dot-green"></i></div>
@@ -80,12 +80,18 @@
             </div>
             <p></p>
             <div class="form-check">
-                <%= form_tag hour_path, :method => 'get' do %>
-                    <%= label_tag "24-hour Clock" %>
+                <%= form_tag root_path, :method => 'get' do %>
+                    <%= label_tag "12-hour Clock" %>
                     <%= check_box :hourtype, :onclick => 'this.form.submit()' %>
                     <%= submit_tag "Go", class:"btn btn-sm btn-secondary"%>
                 <% end %>
-            </div>            
+            </div>
+            <%#=form_tag root_path, :method => 'get' do |f| %>
+                <%#= f.check_box :theme, :class => "theme-chkbox" %>
+                <%#= f.check_box :theme, :class => "theme-chkbox" %>
+                <%#= f.check_box :theme, :class => "theme-chkbox" %>
+            <%# end %>
+            
         </div>
         
     </div>
