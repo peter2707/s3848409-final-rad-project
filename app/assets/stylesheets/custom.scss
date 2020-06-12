@@ -1,0 +1,180 @@
+@import "bootstrap";
+
+/* universal */
+
+body {
+  padding-top: 60px;
+  background-color: #2B2B2B;
+  color: white;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+.col-sm-6{
+  background-color: #3A3A3A;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
+
+  
+  h1 {
+    font-size: 3em;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 1.2em;
+    letter-spacing: -1px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: normal;
+    color: #777;
+  }
+  
+  p {
+    font-size: 1.1em;
+    line-height: 1.7em;
+  }
+}
+
+
+  /*     header      */
+
+  #logo {
+    float: left;
+    padding: 0px;
+  }
+
+  header {
+    background-color:#2B2B2B !important;
+  }
+
+  .active {
+    border-bottom:2px solid red;
+  }
+
+  nav li {
+    transition-duration: 0.4s;
+    list-style: none;
+    margin-left: 20px;
+    font-size: 1.5em;
+    margin-bottom: 50px;
+  }
+  .btn {
+    border-radius: 25px;
+    text-align: center;
+    height: 40px;
+    padding-top: 10px;
+    width: auto;
+    min-width: 100px;
+    font-size: small;
+    font-weight: bold;
+  } 
+  
+  .btn-outline-success:hover {
+    color: black;
+  }
+
+  .badge{
+    height: 40px;
+    width: 100px;
+    padding-top: 12px;
+    color: black;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+  }
+  .badge:hover{
+    color: black;
+  }
+
+  /*     footer      */
+
+  footer {
+    background-color:#3A3A3A !important;
+    margin-top: 45px;
+    border-top: 1px solid #eaeaea;
+    color: white;
+    position: fixed;
+    height: 70px;
+    bottom: 0;
+    small{
+      text-align: center;
+      padding: 10px;
+      padding-left: 50px;
+    }
+  }
+  .fa {
+    padding-top: 12px;
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+  }
+  
+  .fa:hover {
+    opacity: 0.7;
+    text-decoration: none;
+    color: white;
+  }
+
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+
+  .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+
+  /*      Side bar      */
+
+  .dot-green{
+    color: #00CD69;
+  }
+  .dot-yellow{
+    color: #EDBD50;
+  }
+  .dot-red{
+    color: #F34A5D;
+  }
+  .fa-moon-o {
+    color: white;
+  }
+  .side-bar {
+    text-align: left;
+    p{
+      margin: 0;
+      padding: 0;
+      font-size: small;
+    }
+  }
