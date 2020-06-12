@@ -28,6 +28,8 @@ textarea {
   background-color: #3A3A3A;
   padding: 10px;
   border-radius: 5px;
+  min-height: 400px;
+  height: auto;
 }
 
 /* typography */
@@ -70,10 +72,6 @@ h1, h2, h3, h4, h5, h6 {
     background-color:#2B2B2B !important;
   }
 
-  .active {
-    border-bottom:2px solid red;
-  }
-
   nav li {
     transition-duration: 0.4s;
     list-style: none;
@@ -95,18 +93,15 @@ h1, h2, h3, h4, h5, h6 {
   .btn-outline-success:hover {
     color: black;
   }
+  .current {
+    color: black;
+    background-color: #00CD69;
+  }
 
-  .badge{
+  .nav-brand{
     height: 40px;
     width: 100px;
-    padding-top: 12px;
-    color: black;
-    font-size: large;
-    font-weight: bold;
-    text-align: center;
-  }
-  .badge:hover{
-    color: black;
+    font-size: 1em;
   }
 
   /*     footer      */
@@ -116,13 +111,13 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 45px;
     border-top: 1px solid #eaeaea;
     color: white;
-    position: fixed;
     height: 70px;
-    bottom: 0;
-    small{
+
+    p{
       text-align: center;
+      font-size: small;
       padding: 10px;
-      padding-left: 50px;
+      padding-left: 100px;
     }
   }
   .fa {

@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'json'
+
+Timezone.delete_all
+data = ActiveSupport::JSON.decode(File.read("./db/zone.json"))
+    data.each do |attributes|
+    Timezone.create!(
+        value: attributes['value'],
+        abbr: attributes['abbr'],
+        offset: attributes['offset'],
+        isdst: attributes['isdst'],
+        text: attributes['text'],
+        utc: attributes['utc']
+    )
+    end
+

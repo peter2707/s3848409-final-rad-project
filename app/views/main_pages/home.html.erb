@@ -15,12 +15,20 @@
         </div>
 
         <div class="col-sm-6">
-            time
+            <div class="">
+            <%= Time.zone.now %>
+            </div>
         </div>
 
         <div class="col-sm-3">
             <p>Color Theme</p>
 
+            <%#=form_tag root_path, :method => 'get' do |f| %>
+                <%#= f.check_box :theme, :class => "theme-chkbox" %>
+                <%#= f.check_box :theme, :class => "theme-chkbox" %>
+                <%#= f.check_box :theme, :class => "theme-chkbox" %>
+            <%# end %>
+            
         </div>
         
     </div>
